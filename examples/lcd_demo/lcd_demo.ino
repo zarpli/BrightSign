@@ -1,70 +1,64 @@
+/*
+Zarpli - Tecnología Interactiva
+12112021 Alejandro Zárate
+https://github.com/zarpli/BrightSign/
+
+DESCRIPTION
+====================
+  
+Example of the BrightSign library that play cyclically a series of eight 
+videos 1.mp4, 2.mp4 ... 8.mp4, waiting for each one to finish.
+
+LCD 16x2 is Optional and requires the library:
+https://github.com/arduino-libraries/LiquidCrystal
+  
+The BSuControl Script must be installed in the BrightSign unit 
+memory unit and must be connected to the Serial1 port.  
+https://github.com/zarpli/BSuControl/
+*/
+
+#include <BrightSign.h>
 #include <LiquidCrystal.h>
 
-#define BS_SERIAL     Serial1
-#define STX           0x02
-#define ETX           0x03
+// Instantiate a BrightSign object and Attach to Serial1
+BrightSign BS(Serial1);
 
+// Instantiate a LiquidCrystal object.
 LiquidCrystal lcd(8, 9, 4, 5, 6, 7);
-
-boolean online = false;
-boolean media_ended = true;
 
 unsigned char current_track = 1;
 
-void setup() {
+void setup(){
 
-    Serial.begin(115200);
-    BS_SERIAL.begin(115200);
+BS.debug();         // Enable debug msg over Serial
 
-    while (!Serial);
-    Serial.println("BSuControl Serial Port Control 1.0");    
+lcd.begin(16, 2);
+lcd.print("BSuControl");
+lcd.setCursor(0,1);
+lcd.print("Waiting Power-UP");
 
-    lcd.begin(16, 2);
-    lcd.print("BSuControl");
+Serial.begin(9600);
+while(!Serial);
+
+Serial.println("Waiting BrightSign Power-Up");
+while(!BS.online())BS.update(); 
+
+lcd.clear();
+lcd.print("BSuControl");
+
+BS.volume(20);      //Set Volume to 20%
 }
-
-void status_bs() {
-    if (BS_SERIAL.available()>2)
-    {
-          if (BS_SERIAL.read() != STX) return;
-          byte cmd = BS_SERIAL.read(); 
-          if (BS_SERIAL.read() == ETX)
-          {
-          lcd.setCursor(0,0);
-          Serial.print("BS : ");
-          lcd.print("BS : ");
-          if(cmd == 0x00) {Serial.println("error"); lcd.print("error      ");}
-          if(cmd == 0x01) {Serial.println("ok"); lcd.print("ok         ");}
-          if(cmd == 0x02) {Serial.println("online"); lcd.print("online     "); online = true;}
-          if(cmd == 0x08) {Serial.println("media_ended"); lcd.print("media_ended"); media_ended = true;}
-          }
-    }   
-}
-
 
 void loop(){
+BS.update();        // Update the BrightSign instance
 
-  while(!online) status_bs();
-  
-  delay(1000);
-  
-  while(1)
-  {
-        status_bs();
-
-        if(media_ended == true)
-        {
-        lcd.setCursor(0,1);
-        lcd.print("PLAY " + (String)current_track + ".MP4");
-        Serial.println("PLAY " + (String)current_track + ".MP4");
-        BS_SERIAL.print("PLAY " + (String)current_track + ".MP4\r");
-  
-        current_track ++;
-        if(current_track == 9)current_track = 1;
-        media_ended = false;
-        }
- }
+if(BS.media_ended()){
+  BS.play((String)current_track + ".MP4");
+  lcd.setCursor(0,1);
+  lcd.print("PLAY " + (String)current_track + ".MP4");
+  Serial.println("PLAY " + (String)current_track + ".MP4");
  
-
-
+  current_track ++;
+  if(current_track == 9)current_track = 1;
+  }
 }
