@@ -12,7 +12,7 @@ while(!Serial);
 Serial.println("Waiting BrightSign PowerUp");
 while(!BS.online())BS.update(); 
 
-BS.volume(20);            //Sel Volume to 20%
+BS.volume(20);            //Set Volume to 20%
 }
 
 void loop(){
