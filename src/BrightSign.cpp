@@ -13,10 +13,22 @@ void BrightSign::update(){
           byte cmd = bs_serial->read(); 
           if (bs_serial->read() == ETX)
           {
-            if(cmd == ERROR) {if(bs_debug) Serial.println("BS : error"); bs_error = true;}
-            if(cmd == OK) {if(bs_debug) Serial.println("BS : ok"); bs_error = false;}
-            if(cmd == ONLINE) {if(bs_debug) Serial.println("BS : online"); bs_online = true;}
-            if(cmd == MEDIA_ENDED) {if(bs_debug) Serial.println("BS : media_ended"); bs_media_ended = true;}
+            if(cmd == ERROR) {
+                if(bs_debug) Serial.println("BS : error"); 
+                bs_error = true;
+            }
+            if(cmd == OK) {
+                if(bs_debug) Serial.println("BS : ok");
+                bs_error = false;
+            }
+            if(cmd == ONLINE) {
+                if(bs_debug) Serial.println("BS : online"); 
+                bs_online = true;
+            }
+            if(cmd == MEDIA_ENDED) {
+                if(bs_debug) Serial.println("BS : media_ended");
+                bs_media_ended = true;
+            }
           }
     }   
 }
