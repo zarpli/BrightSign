@@ -1,2 +1,2 @@
 # BrightSign
-Arduino Library for use with BSuControl Script
+Arduino Library for use with [BSuControl](https://github.com/zarpli/BSuControl) Script
