@@ -1,6 +1,23 @@
+/*
+  DESCRIPTION
+  ====================
+   
+  Simple example of the BrightSign library that play a media file 
+  and wait for it to finish to run again.
+  
+  The BSuControl Script must be installed in the BrightSign unit 
+  memory unit and must be connected to the Serial1 port.
+  
+  https://github.com/zarpli/BSuControl
+  
+  12112021
+	Alejandro Zárate
+	https://zarpli.com
+*/
+
 #include <BrightSign.h>
 
-// Instantiate a BrightSign object and Attach to a Serial1
+// Instantiate a BrightSign object and Attach to Serial1
 BrightSign BS(Serial1);   
 
 void setup(){
