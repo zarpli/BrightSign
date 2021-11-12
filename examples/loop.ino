@@ -1,21 +1,25 @@
 #include <BrightSign.h>
 
-BrightSign BS(Serial1);
+// Instantiate a BrightSign object and Attach to a Serial1
+BrightSign BS(Serial1);   
 
 void setup(){
 
-BS.debug();               // Enable debug msg over Serial
+// Enable debug msg over Serial
+BS.debug();               
 
 Serial.begin(9600);
 while(!Serial);
 
-Serial.println("Waiting BrightSign PowerUp");
+Serial.println("Waiting BrightSign Power-Up");
 while(!BS.online())BS.update(); 
 
-BS.volume(20);            //Set Volume to 20%
+//Set Volume to 20%
+BS.volume(20);            
 }
 
 void loop(){
+// Update the BrightSign instance
 BS.update();
 if(BS.media_ended()) BS.play("AUDIO.M4A");
 }
