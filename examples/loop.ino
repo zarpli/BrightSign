@@ -1,18 +1,18 @@
 /*
-  DESCRIPTION
-  ====================
-   
-  Simple example of the BrightSign library that play a media file 
-  and wait for it to finish to run again.
+Zarpli - Tecnología Interactiva
+12112021 Alejandro Zárate
+https://github.com/zarpli/BrightSign/
+
+DESCRIPTION
+====================
   
-  The BSuControl Script must be installed in the BrightSign unit 
-  memory unit and must be connected to the Serial1 port.
+Simple example of the BrightSign library that play a media file 
+and wait for it to finish to run again.
   
-  https://github.com/zarpli/BSuControl
-  
-  12112021
-	Alejandro Zárate
-	https://zarpli.com
+The BSuControl Script must be installed in the BrightSign unit 
+memory unit and must be connected to the Serial1 port.  
+
+https://github.com/zarpli/BSuControl/
 */
 
 #include <BrightSign.h>
