@@ -1,0 +1,26 @@
+#######################################
+# Syntax Coloring Map For BrightSign
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+BrightSign	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+play		KEYWORD2
+stop		KEYWORD2
+pause		KEYWORD2
+resume		KEYWORD2
+volume		KEYWORD2
+reboot		KEYWORD2
+update		KEYWORD2
+media_ended	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
