@@ -13,6 +13,9 @@ The BSuControl Script must be installed in the BrightSign unit
 memory unit and must be connected to the Serial1 port.  
 
 https://github.com/zarpli/BSuControl/
+
+Media Files for Testing
+https://github.com/zarpli/Media/
 */
 
 #include <BrightSign.h>
