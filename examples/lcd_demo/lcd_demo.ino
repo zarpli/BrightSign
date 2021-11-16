@@ -15,6 +15,9 @@ https://github.com/arduino-libraries/LiquidCrystal
 The BSuControl Script must be installed in the BrightSign unit 
 memory unit and must be connected to the Serial1 port.  
 https://github.com/zarpli/BSuControl/
+
+Media Files for Testing
+https://github.com/zarpli/Media/
 */
 
 #include <BrightSign.h>
@@ -41,7 +44,7 @@ Serial.begin(9600);
 while(!Serial);
 
 Serial.println("Waiting BrightSign Power-Up");
-while(!BS.online())BS.update(); 
+//while(!BS.online())BS.update(); 
 
 lcd.clear();
 lcd.print("BSuControl");
@@ -53,7 +56,7 @@ void loop(){
 BS.update();        // Update the BrightSign instance
 
 if(BS.media_ended()){
-  BS.play((String)current_track + ".MP4");
+  BS.play("/AUDIO/SEQUENCE/" + (String)current_track + ".WAV");
   lcd.setCursor(0,1);
   lcd.print("PLAY " + (String)current_track + ".MP4");
   Serial.println("PLAY " + (String)current_track + ".MP4");
