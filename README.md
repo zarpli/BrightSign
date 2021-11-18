@@ -38,7 +38,7 @@ BS.volume(20);
 void loop(){
 // Update the BrightSign instance
 BS.update();
-if(BS.media_ended()) BS.play("VIDEO/DEMO.MP4");
+if(BS.media_ended()) BS.play("VIDEO/DEMO.MOV");
 }
 
 ```
