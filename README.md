@@ -14,7 +14,7 @@ Simple example of the BrightSign library that play a media file "demo.mov" locat
   
 The BSuControl Script must be installed in the BrightSign unit memory unit and must be connected to the Serial1 port of the arduino board.  
 
-```
+```C++
 #include <BrightSign.h>
 
 // Instantiate a BrightSign object and Attach to Serial1
@@ -40,7 +40,6 @@ void loop(){
 BS.update();
 if(BS.media_ended()) BS.play("VIDEO/DEMO.MOV");
 }
-
 ```
 
 # YouTube
