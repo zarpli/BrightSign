@@ -56,10 +56,10 @@ void loop(){
 BS.update();        // Update the BrightSign instance
 
 if(BS.media_ended()){
-  BS.play("/AUDIO/SEQUENCE/" + (String)current_track + ".WAV");
+  BS.play("/VIDEO/SEQUENCE/" + (String)current_track + ".MP4");
   lcd.setCursor(0,1);
-  lcd.print("PLAY " + (String)current_track + ".WAV");
-  Serial.println("PLAY " + (String)current_track + ".WAV");
+  lcd.print("PLAY " + (String)current_track + ".MP4");
+  Serial.println("PLAY " + (String)current_track + ".MP4");
  
   current_track ++;
   if(current_track == 9)current_track = 1;
