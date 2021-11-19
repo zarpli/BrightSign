@@ -1,6 +1,6 @@
 # BrightSign
 
-BrightSign media player **with** a serial port can send and receive commands over serial using a custom script.
+BrightSign media players **with** a serial port can send and receive commands over serial using a custom script.
 
 This Arduino Library is for use with [BSuControl](https://github.com/zarpli/BSuControl) Script
 
