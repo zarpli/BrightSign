@@ -15,7 +15,7 @@ BrightSign BS(Serial1)
 Instantiate a BrightSign object and attach to Serial1, You may create multiple BrightSign objects.
 
 ```C++
-BS.update();
+BS.update()
 ```
 Read the BrightSign and update its status. This update() function must be called regularly.
 
