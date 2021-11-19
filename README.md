@@ -34,7 +34,9 @@ Enable debug messages on serial port :
 ```C++
 BS.play("MEDIA/FILE.MOV")
 ```
-Play media file called "file.mov" in "media" directory.When media file is a video, the PLAY command stops on the last frame.
+Play media file called "file.mov" in "media" directory.
+
+When media file is a video the PLAY command stops on the last frame.
 
 The argument is used in **uppercase** as this is how brightsign handles files internally.
 
