@@ -31,6 +31,54 @@ Enable debug messages on serial port :
 |BS : online|The unit starts up and has the script installed|
 |BS : media_ended|A file has finished playing|
 
+```C++
+BS.play("MEDIA/FILE.MOV")
+```
+Play media file called "file.mov" in "media" directory.
+When media file is a video, the PLAY command stops on the last frame.
+The argument is used in uppercase as this is how brightsign handles files internally.
+
+```C++
+BS.volume(INT)
+```
+Set the volume to INT percent of normal.
+
+```C++
+BS.stop()
+```
+Stop the currently playing media and clears the screen.
+
+```C++
+BS.pause()
+```
+Pause the currently playing media.
+
+```C++
+BS.resume()
+```
+Resume the currently paused media.
+
+```C++
+BS.reboot()
+```
+Restarts the unit.
+
+```C++
+boolean BS.online()
+```
+return TRUE when the unit starts up and has the script installed.
+
+```C++
+boolean BS.media_ended()
+```
+return TRUE when a media file has finished playing.
+
+```C++
+boolean BS.error()
+```
+return TRUE when the last command was not executed correctly.
+
+
 # Example
 
 Simple example of the BrightSign library that play a media file "demo.mov" locate in "video" directory, and wait for it to finish to run again.
