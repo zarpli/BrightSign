@@ -21,8 +21,8 @@ void    resume();
 void    update();
 void    stop();
 void    debug()               {bs_debug = true;}
+boolean error()               {return bs_error;}
 boolean online()              {return bs_online;}
-boolean status()              {return bs_error;}
 boolean media_ended()         {return bs_media_ended;}
 
 private:
