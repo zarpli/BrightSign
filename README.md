@@ -10,17 +10,17 @@ Download the latest version [here](https://github.com/zarpli/BrightSign/archive/
 
 # Basic Usage
 ```C++
-BrightSign BS(Serial1);
+BrightSign BS(Serial1)
 ```
 Instantiate a BrightSign object and attach to Serial1, You may create multiple BrightSign objects.
 
 ```C++
-BS.update();
+BS.update()
 ```
 Read the BrightSign and update its status. This update() function must be called regularly.
 
 ```C++
-BS.debug();  
+BS.debug()  
 ```
 Enable debug messages on serial port :
 
@@ -34,9 +34,9 @@ Enable debug messages on serial port :
 ```C++
 BS.play("MEDIA/FILE.MOV")
 ```
-Play media file called "file.mov" in "media" directory.
-When media file is a video, the PLAY command stops on the last frame.
-The argument is used in uppercase as this is how brightsign handles files internally.
+Play media file called "file.mov" in "media" directory.When media file is a video, the PLAY command stops on the last frame.
+
+The argument is used in **uppercase** as this is how brightsign handles files internally.
 
 ```C++
 BS.volume(INT)
