@@ -81,7 +81,7 @@ boolean BS.error()
 return TRUE when the last command was not executed correctly.
 
 
-# Example
+# Loop Example
 
 Simple example of the BrightSign library that play a media file "demo.mov" locate in "video" directory, and wait for it to finish to run again.
   
