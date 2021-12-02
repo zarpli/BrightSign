@@ -15,10 +15,12 @@ BrightSign	KEYWORD1
 play		KEYWORD2
 stop		KEYWORD2
 pause		KEYWORD2
+debug   KEYWORD2
 resume		KEYWORD2
 volume		KEYWORD2
 reboot		KEYWORD2
 update		KEYWORD2
+online    KEYWORD2
 media_ended	KEYWORD2
 
 #######################################
