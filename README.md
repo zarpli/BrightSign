@@ -41,7 +41,7 @@ When media file is a video the PLAY command stops on the last frame.
 The filename and path is used in **uppercase** as this is how brightsign handles files internally.
 
 ```C++
-BS.loop("ẗrue")
+BS.loop("AlwaysLoop")
 ```
 Enable loop mode seamlessly if possible. If the video file cannot be looped seamlessly, then the video will loop with seams.
 
