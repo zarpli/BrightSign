@@ -12,8 +12,8 @@ BrightSign	KEYWORD1
 # Methods and Functions (KEYWORD2)
 #######################################
 
-loop		KEYWORD2
 play		KEYWORD2
+loop		KEYWORD2
 stop		KEYWORD2
 pause		KEYWORD2
 debug   KEYWORD2
