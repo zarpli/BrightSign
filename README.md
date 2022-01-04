@@ -38,7 +38,12 @@ Play media file called "file.mov" in "media" directory.
 
 When media file is a video the PLAY command stops on the last frame.
 
-The argument is used in **uppercase** as this is how brightsign handles files internally.
+The filename and path is used in **uppercase** as this is how brightsign handles files internally.
+
+```C++
+BS.loop("ẗrue")
+```
+Enable loop mode seamlessly if possible. If the video file cannot be looped seamlessly, then the video will loop with seams.
 
 ```C++
 BS.volume(INT)
