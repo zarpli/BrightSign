@@ -15,7 +15,7 @@ public:
 BrightSign(HardwareSerial &serial);
 void    play(String file);
 void    volume(int percentage);
-void    loop(bool option);
+void    loop(String option);
 void    pause();
 void    reboot();
 void    resume();
