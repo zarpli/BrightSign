@@ -42,8 +42,8 @@ void BrightSign::volume(int percentage){
 bs_serial->print("VOLUME " + (String)percentage + "\r");
 }
 
-void BrightSign::loop(bool option){
-bs_serial->print("LOOP " + (String)option + "\r");
+void BrightSign::loop(String option){
+bs_serial->print("LOOP " + option + "\r");
 }
 
 void BrightSign::stop(){
